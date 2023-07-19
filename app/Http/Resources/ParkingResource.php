@@ -31,7 +31,7 @@ class ParkingResource extends JsonResource
                 'plate_number' => $this->vehicle->plate_number,
             ],
             'start_time' => $this->start_time->toDateTimeString(),
-            'stop_time' => $this->stop_time->toDateTimeString(),
+            'stop_time' => empty($this->stop_time) ? null : $this->stop_time->toDateTimeString(),
             'total_price' => $totalPrice,
         ];
     }
