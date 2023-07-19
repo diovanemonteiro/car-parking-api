@@ -7,8 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\Rule;
 
+/**
+ * @group Auth
+ */
 class ProfileController extends Controller
 {
+    /**
+     * Show profile user
+     * 
+     * @authenticated
+     */
     public function show(Request $request)
     {
         return response()->json($request->user()->only('name', 'email'));
